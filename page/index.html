@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>一个小动画</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../图标/Font-Awesome-3.2.1/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/main2.css">
+	<script type="text/javascript" src="../img/data.js"></script>
+	
+</head>
+<body>
+	<div class="main-wrapper3" onselectstart="return false;">
+		
+	<header><!-- 页头开始 -->
+		<nav>
+			<div class="logo"><a href="博客.html">ZIP</a></div>
+			<ul>
+				<li><a href="博客.html" target="_self">首页</a></li>
+				<li><a href="文章.html" target="_self">文章模板</a></li>
+				<li><a href="#" class="active" >一个小小的动画</a></li>
+				<li id="sidebar_trigger"><a href="#">侧方列表</a></li>
+			</ul>
+		</nav>
+		<div id="banner" >
+			<div class="inner2 ">
+				<h1 id="toph">ZIP</h1>
+			</div>
+		</div>
+	</header><!-- 页头结束 -->
+		
+	<div class="content"><!-- 内容开始 -->
+	<div class="wrap" id="wrap" >
+			<!-- 负责平移旋转 -->
+			<div class="photo  photo_front" onclick="turn(this)" id="photo_{{index}}">
+			<!-- 负责翻转 -->
+				<div class="photo_wrap">
+					<div class="side side_front">
+						<p class="image">
+						<img src="../img/{{img}}" alt="img/{{img}}">
+						</p>
+						<p class="caption">{{caption}}
+						</p>
+					</div>
+
+					<div class="side side_back">
+						<p class="desc">{{desc}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- 内容结束 -->
+
+	<footer class="footer1"><!-- 页脚开始 -->
+		<ul class="share-group">
+			<li class="icon-twitter"></li>
+			<li class="icon-google-plus-sign"></li>
+			<li class="icon-facebook-sign"></li>
+			<li class="icon-github-sign"></li>
+			<li class="icon-pinterest"></li>
+		</ul>
+		<div class="copy">
+			&copy ZIP
+		</div>
+	</footer><!-- 页脚结束 -->
+
+	</div>
+	<div class="mask"></div>
+	<div id="sidebar">
+		<ul>
+			<li><a href="baikuai.html" target="_self">一个叫别踩白块的小游戏</a></li>
+			<li><a href="#">item2</a></li>
+			<li><a href="#">item3</a></li>
+			<li><a href="#">item4</a></li>
+			<li><a href="#">item5</a></li>
+		</ul>
+	</div>
+	
+	<button class="back">返回顶部</button>
+
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="../js/main2.js"></script>
+</body>
+</html>

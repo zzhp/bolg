@@ -1,0 +1,186 @@
+*{
+			margin: 0;
+			padding: 0;
+
+		}
+		body{
+			background-color: #fff;
+			color: #555;
+			font-family: 'Avenir Next','Lantinghei SC';
+			font-size: 14px;
+			font-smoothing:antialiased;
+			/*设置文字光滑度，这玩意儿好像没有用了*/
+			-moz-user-select: none;
+			/*使得文字无法选中*/
+		}
+		@font-face{
+	    font-family:'icons';
+	    src: url(../img/icons.woff) format('woff');
+	    font-weight: normal;
+	    font-style: normal;
+		}
+		/*整体样式*/
+		.wrap{
+			/*display: none;*/
+			width: 100%;
+			height: 600px;
+			top: 50%;
+			margin-top: -300px;
+			position: absolute;
+			/*这样可以设置为垂直居中 margin-top设置为hight的负一半
+			top设置为50%*/
+			background-color: #333;
+			overflow: hidden;
+			perspective:800px;
+			background:rgba(0,0,0,0.01);
+			/*子元素获得3D元素的支持这里是设置子元素距离视图的位置*/
+		
+		}
+		/*海报样式*/
+		.photo{
+			width: 260px;
+			height: 320px;
+			position: absolute;
+			z-index: 1;
+			box-shadow: 0 0 1px rgba(0,0,0,0.01);
+			transition: all 1s;
+			left: 50%;
+			top: 50%;
+			margin: -160px 0 0 -130px;
+
+		}
+		.photo .side{
+			width: 100%;
+			height: 100%;
+			background-color: #eee;
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 20px;
+
+			box-sizing: border-box;/*宽度和内容都不会超过边框！！！！！*/
+		}
+		.photo .side_front{}
+
+		.photo .side_front .image{
+			width: 100%;
+			height: 250px;
+			line-height: 250px;
+			overflow: hidden;
+
+		}
+		.photo .side_front .image img{
+			width: 100%;
+		}
+		.photo .side_front .caption{
+			text-align: center;
+			font-size: 16px;
+			line-height: 50px;
+
+		}
+		.photo .side_back{
+
+		}
+
+		.side_back .desc{
+			color: #666;
+			font-size: 14px;
+			line-height: 1.5;
+		}
+		/*当前选中海报的样式*/
+		.photo_center{
+			left: 50%;
+			top: 50%;
+			margin: -160px 0 0 -130px;
+			/*这样可以设置为水平居中 left和top设置为50%
+			margin-top和margin—left设置为top和left的负一半*/
+			z-index: 999;
+		}
+		/*负责翻转*/
+		.photo_wrap{
+			position: absolute;
+			width: 100%;
+			height:100%;
+			transform-style:preserve-3d;/*支持3d效果*/
+			transition: all 1s;
+			transform-origin:  0% 50%;
+		}
+		.photo_wrap .side_front{
+		    transform: rotateY(0deg);
+		}
+		.photo_wrap .side_back{
+		    transform:rotateY(180deg);
+		}
+		.photo_wrap .side{
+			backface-visibility:hidden;/*当元素不面向屏幕的时候隐藏*/
+		}
+		.photo_front .photo_wrap{
+			transform:translate(0px,0px) rotateY(0deg);
+		}
+		.photo_back .photo_wrap{
+			transform:translate(260px,0px) rotateY(180deg);
+		}
+		.nav{
+	    width: 80%;
+	    height:30px;/*防止.nav覆盖.photo*/
+	    position: absolute;
+	    line-height: 30px;
+	    bottom:20px;
+	    left:10%;
+	    z-index: 999;
+	    text-align: center;
+		}
+		.nav .i{
+		    display: inline-block;
+		    width: 30px;
+		    height: 30px;
+		    background: rgba(166, 166, 166, 0.8);
+		    border-radius:50%;
+		    cursor:pointer;
+		    transition:all .6s ease-in-out;
+		    transform:scale(.4);
+		}
+		.nav .i-current{
+		    transform:scale(.7);
+		    transition:all .6s ease-in-out;
+		}
+		.nav .i-current::after{
+		    content:'\e600';
+		    font-family: 'icons';
+		    font-size:80%;
+		    display: inline-block;
+		    line-height: 35px;
+		    text-align: center;
+		    color: #fff;
+		    vertical-align: 38%;
+		    opacity:1;
+		}
+		.nav .i-front{
+		    transform: rotateY(0deg);
+		}
+		.nav .i-back{
+		    transform: rotateY(180deg);
+		    background: rgba(84, 84, 84, 0.8);
+		}
+		
+		#banner .inner2{
+			max-width: 300px;
+			text-align:center;
+			margin: 0 auto;
+			position: relative;
+			top: -10px;
+			color: #fff;
+		}
+		.main-wrapper3{
+			background: #444 url(img/305370.jpg);
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			overflow: hidden;
+		}
+		.footer1{
+			color: #fff;
+			min-height: 200px;
+			text-align: center;
+		}
